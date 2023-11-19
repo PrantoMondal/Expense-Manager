@@ -1,4 +1,4 @@
-package com.mapledew.expense_manager
+package com.mapledew.expendigo
 
 import io.flutter.embedding.android.FlutterActivity
 
