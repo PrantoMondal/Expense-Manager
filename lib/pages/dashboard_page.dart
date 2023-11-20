@@ -66,9 +66,9 @@ class DashboardPage extends StatelessWidget {
                 itemBuilder: (context, index) {
                   // var expense = expenseProvider.recentExpenses[index];
                   return ListTile(
-                    title: Text("expense.title"),
-                    subtitle: Text('\${expense.amount.toStringAsFixed(2)}'),
-                    trailing: Text("expense.date"),
+                    title: Text("Test title"),
+                    subtitle: Text('\$50.90'),
+                    trailing: Text("Aug 23,2023"),
                   );
                 },
               ),
