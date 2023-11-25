@@ -6,6 +6,7 @@ import 'package:expense_manager/pages/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
+  static const String routeName = '/splash';
   const SplashScreen({super.key});
 
   @override

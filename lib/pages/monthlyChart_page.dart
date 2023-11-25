@@ -1,4 +1,4 @@
-import 'package:expense_manager/utils/pie_chart.dart';
+import 'package:expense_manager/widgets/old/pie_chart.dart';
 import 'package:flutter/material.dart';
 
 class MonthlyChartPage extends StatelessWidget {

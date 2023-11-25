@@ -39,6 +39,7 @@ dependencies:
   fl_chart: ^0.64.0
   firebase_core: ^2.22.0
   google_fonts: ^6.1.0
+  feather_icons: ^1.2.0
 
 
 

@@ -32,6 +32,17 @@ class ExTextStyle {
     fontWeight: FontWeight.w700,
     color: ExColor.textColorGreen,
   );
+
+  static TextStyle green15W500 = GoogleFonts.inter(
+    fontSize: 15.0,
+    fontWeight: FontWeight.w500,
+    color: ExColor.textColorGreen,
+  );
+
+  static TextStyle title20W500 = GoogleFonts.inter(
+    fontSize: 20.0,
+    fontWeight: FontWeight.w500,
+  );
 }
 
 class ExScreenSize {

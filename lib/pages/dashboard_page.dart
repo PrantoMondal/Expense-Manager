@@ -1,4 +1,4 @@
-import 'package:expense_manager/utils/add_expense_dialog.dart';
+import 'package:expense_manager/widgets/old/add_expense_dialog.dart';
 import 'package:flutter/material.dart';
 
 import 'monthlyChart_page.dart';
@@ -47,16 +47,16 @@ class DashboardPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Total Expenses:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            Text(
+            const Text(
               '\$500',
               style: TextStyle(fontSize: 24, color: Colors.green),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'Recent Expenses:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -65,7 +65,7 @@ class DashboardPage extends StatelessWidget {
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   // var expense = expenseProvider.recentExpenses[index];
-                  return ListTile(
+                  return const ListTile(
                     title: Text("Test title"),
                     subtitle: Text('\$50.90'),
                     trailing: Text("Aug 23,2023"),
@@ -85,7 +85,7 @@ class DashboardPage extends StatelessWidget {
             },
           );
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

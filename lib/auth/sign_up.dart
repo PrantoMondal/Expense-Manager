@@ -1,4 +1,4 @@
-import 'package:expense_manager/auth/sign_up.dart';
+import 'package:expense_manager/auth/login_page.dart';
 import 'package:expense_manager/constants/styles.dart';
 import 'package:expense_manager/utils/rich_text_with_on_tap.dart';
 import 'package:expense_manager/widgets/app_bar.dart';
@@ -8,20 +8,17 @@ import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  static const String routeName = '/login';
-  const LoginPage({super.key});
+class RegistrationScreen extends StatefulWidget {
+  static const String routeName = '/registration';
 
+  const RegistrationScreen({super.key});
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegistrationScreenState createState() => _RegistrationScreenState();
 }
 
 bool isObscure = false;
 
-class _LoginPageState extends State<LoginPage> {
-  TextEditingController _usernameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-
+class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 60.0),
                 const ExAppBar(
                   color: Colors.white,
-                  title: "Login",
+                  title: "Registration",
                 ),
                 const SizedBox(height: 200.0),
                 ExTextField(
@@ -71,9 +68,27 @@ class _LoginPageState extends State<LoginPage> {
                   },
                   isObscure: isObscure,
                 ),
+                const SizedBox(height: 20.0),
+                ExTextField(
+                  prefixIconData: FeatherIcons.lock,
+                  suffixIconData:
+                      isObscure ? FeatherIcons.eyeOff : FeatherIcons.eye,
+                  hintText: "Enter your Password Again",
+                  hintTextStyle: ExTextStyle.green15W500
+                      .copyWith(color: const Color(0xFF549994), fontSize: 12),
+                  labelText: "Confirm Password",
+                  labelTextStyle: ExTextStyle.green15W500,
+                  suffixOnTap: () {
+                    setState(() {
+                      isObscure = !isObscure;
+                    });
+                    print("tap...");
+                  },
+                  isObscure: isObscure,
+                ),
                 const SizedBox(height: 32.0),
                 ExButton(
-                  text: 'Login',
+                  text: 'Register',
                   onPressed: () {
                     print("object");
                   },
@@ -82,11 +97,11 @@ class _LoginPageState extends State<LoginPage> {
                   height: 30,
                 ),
                 richTextWithOnTap(
-                    "Don't have a account?",
-                    " Register",
+                    "Already have account?",
+                    " SignIn",
                     () => Navigator.pushNamedAndRemoveUntil(
                           context,
-                          RegistrationScreen.routeName,
+                          LoginPage.routeName,
                           (route) => false,
                         )),
               ],
