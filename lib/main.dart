@@ -1,5 +1,8 @@
 import 'package:expense_manager/auth/login_page.dart';
+import 'package:expense_manager/pages/bottom_nav.dart';
+import 'package:expense_manager/pages/dashboard_page.dart';
 import 'package:expense_manager/pages/splash_screen.dart';
+import 'package:expense_manager/pages/statistics_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'auth/sign_up.dart';
@@ -29,6 +32,9 @@ class MyApp extends StatelessWidget {
         SplashScreen.routeName: (_) => SplashScreen(),
         LoginPage.routeName: (_) => LoginPage(),
         RegistrationScreen.routeName: (_) => RegistrationScreen(),
+        DashboardScreen.routeName: (_) => DashboardScreen(),
+        ExBottomAppBar.routeName: (_) => ExBottomAppBar(),
+        StatisticsScreen.routeName: (_) => StatisticsScreen(),
       },
       home: const SplashScreen(),
     );

@@ -1,91 +1,215 @@
+import 'package:expense_manager/constants/styles.dart';
 import 'package:expense_manager/widgets/old/add_expense_dialog.dart';
+import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 
-import 'monthlyChart_page.dart';
+class DashboardScreen extends StatelessWidget {
+  static const String routeName = '/dashboard';
+  const DashboardScreen({super.key});
 
-class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Assuming you have a Provider for managing the state
-    //var expenseProvider = Provider.of<ExpenseProvider>(context);
-
     return Scaffold(
-      appBar: AppBar(
-        leading: GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: const Padding(
-            padding: EdgeInsets.only(left: 18.0),
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: Colors.white,
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/pageHeader.png"),
+            fit: BoxFit.fitWidth,
+            alignment: Alignment.topCenter,
           ),
         ),
-        elevation: 0,
-        backgroundColor: Colors.blueAccent,
-        centerTitle: true,
-        title: const Text(
-          'ExpendiGo',
-          style: TextStyle(color: Colors.white),
-        ),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => MonthlyChartPage()));
-              },
-              icon: Icon(
-                Icons.bar_chart,
-                color: Colors.white,
-              ))
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Total Expenses:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const Text(
-              '\$500',
-              style: TextStyle(fontSize: 24, color: Colors.green),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Recent Expenses:',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  // var expense = expenseProvider.recentExpenses[index];
-                  return const ListTile(
-                    title: Text("Test title"),
-                    subtitle: Text('\$50.90'),
-                    trailing: Text("Aug 23,2023"),
-                  );
-                },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(
+                height: 60,
               ),
-            ),
-          ],
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Good Afternoon,',
+                        style: ExTextStyle.title20W500.copyWith(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400),
+                      ),
+                      Text(
+                        'Pranto Kumar',
+                        style: ExTextStyle.title20W500
+                            .copyWith(color: Colors.white),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(6),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Colors.white30),
+                    child: const Stack(
+                      children: [
+                        Icon(
+                          Icons.notifications_none,
+                          color: Colors.white,
+                        ),
+                        Positioned(
+                            right: 0,
+                            top: 0,
+                            child: Icon(
+                              Icons.circle,
+                              size: 10,
+                              color: Color(0xFFFFAB7B),
+                            ))
+                      ],
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(height: 20),
+              Container(
+                padding: const EdgeInsets.all(20),
+                height: 210,
+                decoration: BoxDecoration(
+                    color: const Color(0xFF1B5C58),
+                    borderRadius: BorderRadius.circular(20)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Total Balance",
+                          style: ExTextStyle.t16W500.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "\$ 2,548.00",
+                          style: ExTextStyle.white24W700
+                              .copyWith(color: Colors.white, fontSize: 30),
+                        ),
+                        const Spacer(),
+                        Row(
+                          children: [
+                            const CircleAvatar(
+                              backgroundColor: Colors.white30,
+                              child: Icon(
+                                FeatherIcons.arrowDown,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Income",
+                              style: ExTextStyle.t16W500
+                                  .copyWith(color: const Color(0xFFD0E5E4)),
+                            )
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "\$ 1,840.00",
+                          style: ExTextStyle.title20W500.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        const Icon(
+                          Icons.more_horiz,
+                          color: Colors.white,
+                        ),
+                        const Spacer(),
+                        Row(
+                          children: [
+                            const CircleAvatar(
+                              backgroundColor: Colors.white30,
+                              child: Icon(
+                                FeatherIcons.arrowUp,
+                                color: Colors.white,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Expenses",
+                              style: ExTextStyle.t16W500
+                                  .copyWith(color: const Color(0xFFD0E5E4)),
+                            )
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "\$ 284.00",
+                          style: ExTextStyle.title20W500.copyWith(
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Transactions history",
+                    style: ExTextStyle.title20W500
+                        .copyWith(color: Color(0xFF222222)),
+                  ),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "See all",
+                        style: ExTextStyle.t16W500
+                            .copyWith(color: const Color(0xFF666666)),
+                      ))
+                ],
+              ),
+              Expanded(
+                child: ListView.builder(
+                  padding: EdgeInsets.zero,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                      title: Text("Test title"),
+                      subtitle: Text("Aug 23,2023"),
+                      trailing: Text(
+                        '\$50.90',
+                        style: ExTextStyle.title20W500
+                            .copyWith(color: ExColor.primaryColor),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AddExpenseDialog();
-            },
-          );
-        },
-        child: const Icon(Icons.add),
       ),
     );
   }

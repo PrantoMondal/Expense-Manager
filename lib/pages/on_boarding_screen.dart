@@ -47,7 +47,7 @@ class OnBoardingScreen extends StatelessWidget {
               }),
           const Spacer(),
           richTextWithOnTap(
-            "Already have account?",
+            "Already have an account?",
             " Log In",
             () => Navigator.push(
               context,

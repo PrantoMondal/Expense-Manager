@@ -43,6 +43,10 @@ class ExTextStyle {
     fontSize: 20.0,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle t16W500 = GoogleFonts.inter(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w500,
+  );
 }
 
 class ExScreenSize {

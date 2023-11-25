@@ -1,11 +1,12 @@
 import 'package:expense_manager/auth/sign_up.dart';
 import 'package:expense_manager/constants/styles.dart';
+import 'package:expense_manager/pages/bottom_nav.dart';
+import 'package:expense_manager/pages/dashboard_page.dart';
 import 'package:expense_manager/utils/rich_text_with_on_tap.dart';
 import 'package:expense_manager/widgets/app_bar.dart';
 import 'package:expense_manager/widgets/ex_custom_button.dart';
 import 'package:expense_manager/widgets/ex_text_field.dart';
 import 'package:feather_icons/feather_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -24,7 +25,11 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(
           decoration: const BoxDecoration(
@@ -75,23 +80,30 @@ class _LoginPageState extends State<LoginPage> {
                 ExButton(
                   text: 'Login',
                   onPressed: () {
-                    print("object");
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      ExBottomAppBar.routeName,
+                      (route) => false,
+                    );
                   },
                 ),
                 const SizedBox(
                   height: 30,
                 ),
                 richTextWithOnTap(
-                    "Don't have a account?",
-                    " Register",
-                    () => Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          RegistrationScreen.routeName,
-                          (route) => false,
-                        )),
+                  "Don't have an account?",
+                  " Register",
+                  () => Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    RegistrationScreen.routeName,
+                    (route) => false,
+                  ),
+                ),
               ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
