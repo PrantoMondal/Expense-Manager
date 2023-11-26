@@ -2,7 +2,6 @@ import 'package:expense_manager/auth/login_page.dart';
 import 'package:expense_manager/constants/styles.dart';
 import 'package:expense_manager/utils/rich_text_with_on_tap.dart';
 import 'package:expense_manager/widgets/ex_custom_button.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingScreen extends StatelessWidget {
@@ -18,6 +17,7 @@ class OnBoardingScreen extends StatelessWidget {
           Stack(
             children: [
               Image.asset(
+                  fit: BoxFit.fill,
                   width: screenSize.width,
                   height: screenSize.height * 0.67,
                   "assets/images/onBoarding.png"),
