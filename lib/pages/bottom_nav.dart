@@ -2,10 +2,14 @@ import 'package:expense_manager/auth/login_page.dart';
 import 'package:expense_manager/auth/sign_up.dart';
 import 'package:expense_manager/constants/styles.dart';
 import 'package:expense_manager/pages/dashboard_page.dart';
+import 'package:expense_manager/pages/profile.dart';
 import 'package:expense_manager/pages/statistics_screen.dart';
+import 'package:expense_manager/pages/wallet_screen.dart';
 import 'package:expense_manager/widgets/old/add_expense_dialog.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
+
+import 'add_expense.dart';
 
 class ExBottomAppBar extends StatefulWidget {
   static const String routeName = '/bottomAppbar';
@@ -27,8 +31,8 @@ class _ExBottomAppBarState extends State<ExBottomAppBar> {
   final pages = [
     DashboardScreen(),
     StatisticsScreen(),
-    DashboardScreen(),
-    RegistrationScreen(),
+    WalletScreen(),
+    ProfileScreen(),
   ];
 
   @override
@@ -41,12 +45,7 @@ class _ExBottomAppBarState extends State<ExBottomAppBar> {
           borderRadius: BorderRadius.circular(50.0),
         ),
         onPressed: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AddExpenseDialog();
-            },
-          );
+          Navigator.pushNamed(context, AddExpenseScreen.routeName);
         },
         child: const Icon(
           Icons.add,

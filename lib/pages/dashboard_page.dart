@@ -1,7 +1,10 @@
+import 'package:expense_manager/auth/auth_service.dart';
+import 'package:expense_manager/auth/login_page.dart';
 import 'package:expense_manager/constants/styles.dart';
 import 'package:expense_manager/widgets/old/add_expense_dialog.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 class DashboardScreen extends StatelessWidget {
   static const String routeName = '/dashboard';
@@ -40,7 +43,7 @@ class DashboardScreen extends StatelessWidget {
                             fontWeight: FontWeight.w400),
                       ),
                       Text(
-                        'Pranto Kumar',
+                        AuthService.user!.email.toString(),
                         style: ExTextStyle.title20W500
                             .copyWith(color: Colors.white),
                       ),
@@ -51,21 +54,30 @@ class DashboardScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: Colors.white30),
-                    child: const Stack(
-                      children: [
-                        Icon(
-                          Icons.notifications_none,
-                          color: Colors.white,
-                        ),
-                        Positioned(
-                            right: 0,
-                            top: 0,
-                            child: Icon(
-                              Icons.circle,
-                              size: 10,
-                              color: Color(0xFFFFAB7B),
-                            ))
-                      ],
+                    child: GestureDetector(
+                      onTap: () {
+                        EasyLoading.show(status: 'Please wait');
+                        AuthService.logout();
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, LoginPage.routeName, (route) => false);
+                        EasyLoading.dismiss();
+                      },
+                      child: const Stack(
+                        children: [
+                          Icon(
+                            Icons.notifications_none,
+                            color: Colors.white,
+                          ),
+                          Positioned(
+                              right: 0,
+                              top: 0,
+                              child: Icon(
+                                Icons.circle,
+                                size: 10,
+                                color: Color(0xFFFFAB7B),
+                              ))
+                        ],
+                      ),
                     ),
                   )
                 ],
