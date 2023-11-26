@@ -7,7 +7,7 @@ class ExColor {
   static const Color accentColor = Color(0xFFFFC107);
   static const Color textColorWhite = Color(0xFFffffff);
   static const Color textColorGreen = Color(0xFF438883);
-  static const Color textColorWhite2 = Color(0xFF333333);
+  static const Color black222222 = Color(0xFF222222);
   static const Color textColorWhite3 = Color(0xFF333333);
   static const Color textColorWhite4 = Color(0xFF333333);
   static const Color textColorWhite5 = Color(0xFF333333);

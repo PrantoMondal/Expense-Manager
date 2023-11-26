@@ -55,6 +55,7 @@ class _ExBottomAppBarState extends State<ExBottomAppBar> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
+        elevation: 5,
         height: 60,
         shape: const CircularNotchedRectangle(),
         notchMargin: 10,
