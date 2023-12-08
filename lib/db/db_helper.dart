@@ -3,6 +3,8 @@ import 'package:expense_manager/models/user_model.dart';
 
 class DbHelper {
   static const String collectionUser = 'users';
+  static const String collectionIncome = 'income';
+  static const String collectionExpense = 'expense';
 
   static final FirebaseFirestore _db = FirebaseFirestore.instance;
   static Future<void> addUser(UserModel userModel) =>

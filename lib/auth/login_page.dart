@@ -135,12 +135,15 @@ class _LoginPageState extends State<LoginPage> {
                                       listen: false)
                                   .doesUserExist(credential.user!.uid)) {
                                 final userModel = UserModel(
-                                  uid: credential.user!.uid,
-                                  name: credential.user!.displayName!,
-                                  email: credential.user!.email!,
-                                  userCreationTime: Timestamp.fromDate(
-                                      credential.user!.metadata.creationTime!),
-                                );
+                                    uid: credential.user!.uid,
+                                    name: credential.user!.displayName!,
+                                    email: credential.user!.email!,
+                                    userCreationTime: Timestamp.fromDate(
+                                        credential
+                                            .user!.metadata.creationTime!),
+                                    mobile: '',
+                                    image: '',
+                                    deviceToken: '');
                                 await Provider.of<UserProvider>(context,
                                         listen: false)
                                     .adduser(userModel);

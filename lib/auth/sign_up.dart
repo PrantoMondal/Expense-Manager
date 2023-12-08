@@ -226,13 +226,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         if (await AuthService.register(
             emailController.text, confirmPassController.text)) {
           final userModel = UserModel(
-            uid: AuthService.user!.uid,
-            name: nameController.text,
-            email: AuthService.user!.email!,
-            mobile: phoneController.text,
-            userCreationTime:
-                Timestamp.fromDate(AuthService.user!.metadata.creationTime!),
-          );
+              uid: AuthService.user!.uid,
+              name: nameController.text,
+              email: AuthService.user!.email!,
+              mobile: phoneController.text,
+              userCreationTime:
+                  Timestamp.fromDate(AuthService.user!.metadata.creationTime!),
+              image: '',
+              deviceToken: '');
           if (!mounted) return;
           Provider.of<UserProvider>(context, listen: false)
               .adduser(userModel)

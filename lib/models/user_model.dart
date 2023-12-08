@@ -4,8 +4,8 @@ class UserModel {
   final String uid;
   final String name;
   final String email;
-  final String? mobile;
-  final String? image;
+  final String mobile;
+  final String image;
   final Timestamp userCreationTime;
   final String? deviceToken;
 
@@ -13,8 +13,8 @@ class UserModel {
     required this.uid,
     required this.name,
     required this.email,
-    this.mobile,
-    this.image,
+    required this.mobile,
+    required this.image,
     required this.userCreationTime,
     this.deviceToken,
   });
