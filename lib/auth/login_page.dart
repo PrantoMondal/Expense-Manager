@@ -3,8 +3,7 @@ import 'package:expense_manager/auth/auth_service.dart';
 import 'package:expense_manager/auth/sign_up.dart';
 import 'package:expense_manager/constants/styles.dart';
 import 'package:expense_manager/models/user_model.dart';
-import 'package:expense_manager/pages/bottom_nav.dart';
-import 'package:expense_manager/pages/dashboard_page.dart';
+
 import 'package:expense_manager/pages/splash_screen.dart';
 import 'package:expense_manager/providers/user_provider.dart';
 import 'package:expense_manager/utils/rich_text_with_on_tap.dart';
@@ -171,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   Text(
                     errMsg,
-                    style: TextStyle(color: Colors.red),
+                    style: const TextStyle(color: Colors.red),
                   )
                 ],
               ),

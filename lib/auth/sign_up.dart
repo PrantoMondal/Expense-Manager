@@ -11,7 +11,6 @@ import 'package:expense_manager/widgets/ex_custom_button.dart';
 import 'package:expense_manager/widgets/ex_text_field.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:provider/provider.dart';
@@ -77,7 +76,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   child: Form(
                     key: formkey,
                     child: ListView(
-                      padding: EdgeInsets.only(top: 5),
+                      padding: const EdgeInsets.only(top: 5),
                       children: [
                         ExTextField(
                           textEditingController: nameController,
@@ -143,7 +142,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             setState(() {
                               isObscure = !isObscure;
                             });
-                            print("tap...");
                           },
                           isObscure: isObscure,
                           validator: (value) {
@@ -173,7 +171,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             setState(() {
                               isConfirmObscure = !isConfirmObscure;
                             });
-                            print("tap...");
                           },
                           isObscure: isConfirmObscure,
                           validator: (value) {
@@ -190,7 +187,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           child: ExButton(
                             text: 'Register',
                             onPressed: () {
-                              print(passController.text);
                               authenticate();
                             },
                           ),

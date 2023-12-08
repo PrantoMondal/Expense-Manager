@@ -27,7 +27,6 @@ class _AddExpenseScreenState extends State<AddExpenseScreen> {
     if (picked != null && picked != selectedDate) {
       setState(() {
         selectedDate = picked;
-        // You can do something with the selected date, like updating a text field.
       });
     }
   }

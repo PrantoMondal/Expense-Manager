@@ -85,7 +85,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                                   style: TextStyle(
                                     color: selectedItem == tab
                                         ? Colors.white
-                                        : Color(0xFF466087),
+                                        : const Color(0xFF466087),
                                   ),
                                 ),
                               ),
@@ -127,8 +127,8 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return ListTile(
-                    title: Text("Test title"),
-                    subtitle: Text("Aug 23,2023"),
+                    title: const Text("Test title"),
+                    subtitle: const Text("Aug 23,2023"),
                     trailing: Text(
                       '\$50.90',
                       style: ExTextStyle.title20W500

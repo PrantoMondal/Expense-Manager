@@ -1,7 +1,6 @@
 import 'package:expense_manager/auth/auth_service.dart';
 import 'package:expense_manager/auth/login_page.dart';
 import 'package:expense_manager/constants/styles.dart';
-import 'package:expense_manager/widgets/old/add_expense_dialog.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -50,7 +49,7 @@ class DashboardScreen extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    padding: EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(6),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         color: Colors.white30),
@@ -191,7 +190,7 @@ class DashboardScreen extends StatelessWidget {
                   Text(
                     "Transactions history",
                     style: ExTextStyle.title20W500
-                        .copyWith(color: Color(0xFF222222)),
+                        .copyWith(color: const Color(0xFF222222)),
                   ),
                   TextButton(
                       onPressed: () {},
@@ -208,8 +207,8 @@ class DashboardScreen extends StatelessWidget {
                   itemCount: 10,
                   itemBuilder: (context, index) {
                     return ListTile(
-                      title: Text("Test title"),
-                      subtitle: Text("Aug 23,2023"),
+                      title: const Text("Test title"),
+                      subtitle: const Text("Aug 23,2023"),
                       trailing: Text(
                         '\$50.90',
                         style: ExTextStyle.title20W500

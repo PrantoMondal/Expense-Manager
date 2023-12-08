@@ -1,11 +1,7 @@
-import 'package:expense_manager/auth/login_page.dart';
-import 'package:expense_manager/auth/sign_up.dart';
-import 'package:expense_manager/constants/styles.dart';
 import 'package:expense_manager/pages/dashboard_page.dart';
 import 'package:expense_manager/pages/profile.dart';
 import 'package:expense_manager/pages/statistics_screen.dart';
 import 'package:expense_manager/pages/wallet_screen.dart';
-import 'package:expense_manager/widgets/old/add_expense_dialog.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 
