@@ -27,8 +27,8 @@ class _ExBottomAppBarState extends State<ExBottomAppBar> {
   final pages = [
     DashboardScreen(),
     StatisticsScreen(),
-    WalletScreen(),
-    ProfileScreen(),
+    // WalletScreen(),
+    // ProfileScreen(),
   ];
 
   @override
@@ -74,6 +74,26 @@ class _ExBottomAppBarState extends State<ExBottomAppBar> {
                       color: Colors.grey,
                     ),
             ),
+            // IconButton(
+            //   enableFeedback: false,
+            //   onPressed: () {
+            //     setState(() {
+            //       pageIndex = 2;
+            //     });
+            //   },
+            //   icon: pageIndex == 2
+            //       ? const Icon(
+            //           Icons.wallet,
+            //           color: Color(0xFF549994),
+            //         )
+            //       : const Icon(
+            //           Icons.wallet,
+            //           color: Colors.grey,
+            //         ),
+            // ),
+            const SizedBox(
+              width: 20,
+            ),
             IconButton(
               enableFeedback: false,
               onPressed: () {
@@ -91,43 +111,23 @@ class _ExBottomAppBarState extends State<ExBottomAppBar> {
                       color: Colors.grey,
                     ),
             ),
-            const SizedBox(
-              width: 60,
-            ),
-            IconButton(
-              enableFeedback: false,
-              onPressed: () {
-                setState(() {
-                  pageIndex = 2;
-                });
-              },
-              icon: pageIndex == 2
-                  ? const Icon(
-                      Icons.wallet,
-                      color: Color(0xFF549994),
-                    )
-                  : const Icon(
-                      Icons.wallet,
-                      color: Colors.grey,
-                    ),
-            ),
-            IconButton(
-              enableFeedback: false,
-              onPressed: () {
-                setState(() {
-                  pageIndex = 3;
-                });
-              },
-              icon: pageIndex == 3
-                  ? const Icon(
-                      Icons.person,
-                      color: Color(0xFF549994),
-                    )
-                  : const Icon(
-                      Icons.person_outline,
-                      color: Colors.grey,
-                    ),
-            ),
+            // IconButton(
+            //   enableFeedback: false,
+            //   onPressed: () {
+            //     setState(() {
+            //       pageIndex = 3;
+            //     });
+            //   },
+            //   icon: pageIndex == 3
+            //       ? const Icon(
+            //           Icons.person,
+            //           color: Color(0xFF549994),
+            //         )
+            //       : const Icon(
+            //           Icons.person_outline,
+            //           color: Colors.grey,
+            //         ),
+            // ),
           ],
         ),
       ),

@@ -25,4 +25,21 @@ class UserProvider extends ChangeNotifier {
     final snapshot = await uploadTask.whenComplete(() => null);
     return snapshot.ref.getDownloadURL();
   }
+
+  Future<Map<String, dynamic>?> getUserByDocId(String docId) async {
+    try {
+      DocumentSnapshot snapshot =
+          await FirebaseFirestore.instance.collection('users').doc(docId).get();
+
+      if (snapshot.exists) {
+        Map<String, dynamic>? userData =
+            snapshot.data() as Map<String, dynamic>?;
+        return userData;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      return null;
+    }
+  }
 }

@@ -15,6 +15,18 @@ class DbHelper {
     return snapshot.exists;
   }
 
+  Future<UserModel> getUserDetails(String uid) async {
+    final snapshot =
+        await _db.collection(collectionUser).where("uid", isEqualTo: uid).get();
+
+    if (snapshot.docs.isNotEmpty) {
+      final userData = UserModel.fromMap(snapshot.docs.first.data());
+      return userData;
+    } else {
+      throw Exception('User not found');
+    }
+  }
+
   static Stream<DocumentSnapshot<Map<String, dynamic>>> getUserByUid(
           String uid) =>
       _db.collection(collectionUser).doc(uid).snapshots();
