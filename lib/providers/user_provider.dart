@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:expense_manager/db/db_helper.dart';
+import 'package:expense_manager/models/income_model.dart';
 import 'package:expense_manager/models/user_model.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -42,4 +43,8 @@ class UserProvider extends ChangeNotifier {
       return null;
     }
   }
+
+  //add income
+  Future<void> addIncome(IncomeModel incomeModel) =>
+      DbHelper.addIncome(incomeModel);
 }

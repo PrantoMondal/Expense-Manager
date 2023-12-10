@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:expense_manager/models/income_model.dart';
 import 'package:expense_manager/models/user_model.dart';
 
 class DbHelper {
@@ -32,4 +33,11 @@ class DbHelper {
       _db.collection(collectionUser).doc(uid).snapshots();
 
   static updateProfile(String uid, Map<String, dynamic> map) {}
+
+  //add income
+
+  static Future<void> addIncome(IncomeModel incomeModel) => _db
+      .collection(collectionIncome)
+      .doc(incomeModel.uid)
+      .set(incomeModel.toMap());
 }

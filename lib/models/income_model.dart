@@ -1,16 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class IncomeModel {
+  final String uid;
+
   final double amount;
-  final String purpose;
+  final String source;
   final DateTime date;
   final String? invoice;
   final String? category;
   final String? notes;
 
   IncomeModel({
+    required this.uid,
     required this.amount,
-    required this.purpose,
+    required this.source,
     required this.date,
     this.invoice,
     this.category,
@@ -19,8 +22,9 @@ class IncomeModel {
 
   factory IncomeModel.fromMap(Map<String, dynamic> map) {
     return IncomeModel(
+      uid: map['uid'],
       amount: map['amount'] ?? 0.0,
-      purpose: map['purpose'] ?? '',
+      source: map['source'] ?? '',
       date: (map['date'] as Timestamp).toDate(),
       invoice: map['invoice'],
       category: map['category'],
@@ -30,8 +34,9 @@ class IncomeModel {
 
   Map<String, dynamic> toMap() {
     return {
+      'uid': uid,
       'amount': amount,
-      'purpose': purpose,
+      'source': source,
       'date': date,
       'invoice': invoice,
       'category': category,
