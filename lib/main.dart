@@ -1,5 +1,7 @@
 import 'package:expense_manager/auth/login_page.dart';
 import 'package:expense_manager/pages/add_expense.dart';
+import 'package:expense_manager/pages/add_income.dart';
+import 'package:expense_manager/pages/add_transection.dart';
 import 'package:expense_manager/pages/bottom_nav.dart';
 import 'package:expense_manager/pages/dashboard_page.dart';
 import 'package:expense_manager/pages/profile.dart';
@@ -50,9 +52,11 @@ class MyApp extends StatelessWidget {
         DashboardScreen.routeName: (_) => const DashboardScreen(),
         ExBottomAppBar.routeName: (_) => const ExBottomAppBar(),
         StatisticsScreen.routeName: (_) => const StatisticsScreen(),
-        AddExpenseScreen.routeName: (_) => const AddExpenseScreen(),
-        WalletScreen.routeName: (_) => const WalletScreen(),
-        ProfileScreen.routeName: (_) => const ProfileScreen(),
+        // AddExpenseScreen.routeName: (_) => const AddExpenseScreen(),
+        // AddIncomeScreen.routeName: (_) => const AddIncomeScreen(),
+        AddTransactionScreen.routeName: (_) => const AddTransactionScreen(),
+        // WalletScreen.routeName: (_) => const WalletScreen(),
+        // ProfileScreen.routeName: (_) => const ProfileScreen(),
       },
       home: const SplashScreen(),
       builder: EasyLoading.init(),

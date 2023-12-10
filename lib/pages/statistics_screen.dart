@@ -1,17 +1,8 @@
 import 'package:expense_manager/constants/styles.dart';
 import 'package:expense_manager/widgets/app_bar.dart';
+import 'package:expense_manager/widgets/tab_bar.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
-
-class TabWidget {
-  String tabTitle;
-  Widget tabWidget;
-
-  TabWidget({
-    required this.tabTitle,
-    required this.tabWidget,
-  });
-}
 
 class StatisticsScreen extends StatefulWidget {
   static const String routeName = '/statistics';

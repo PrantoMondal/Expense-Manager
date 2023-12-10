@@ -1,3 +1,4 @@
+import 'package:expense_manager/pages/add_transection.dart';
 import 'package:expense_manager/pages/dashboard_page.dart';
 import 'package:expense_manager/pages/profile.dart';
 import 'package:expense_manager/pages/statistics_screen.dart';
@@ -41,7 +42,7 @@ class _ExBottomAppBarState extends State<ExBottomAppBar> {
           borderRadius: BorderRadius.circular(50.0),
         ),
         onPressed: () {
-          Navigator.pushNamed(context, AddExpenseScreen.routeName);
+          Navigator.pushNamed(context, AddTransactionScreen.routeName);
         },
         child: const Icon(
           Icons.add,
