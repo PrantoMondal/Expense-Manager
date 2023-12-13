@@ -19,7 +19,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 80,
             ),
             Row(
@@ -28,12 +28,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 GestureDetector(
                     onTap: () async {},
                     child: Icon(Icons.arrow_back_ios_new_outlined)),
-                Text(
+                const Text(
                   "Settings",
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             CardWithTitleAndIcon(
@@ -43,8 +43,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               onTap: () async {},
               trailing: Icon(Icons.arrow_forward_ios),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 70.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 70.0),
               child: Divider(
                 color: Colors.grey,
                 thickness: 1,
@@ -57,8 +57,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               onTap: () async {},
               trailing: Icon(Icons.arrow_forward_ios),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 70.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 70.0),
               child: Divider(
                 color: Colors.grey,
                 thickness: 1,

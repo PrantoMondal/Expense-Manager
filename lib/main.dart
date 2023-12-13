@@ -10,6 +10,8 @@ import 'package:expense_manager/pages/splash_screen.dart';
 import 'package:expense_manager/pages/statistics_screen.dart';
 import 'package:expense_manager/pages/wallet_screen.dart';
 import 'package:expense_manager/providers/user_provider.dart';
+import 'package:expense_manager/theme/dark_theme.dart';
+import 'package:expense_manager/theme/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -41,10 +43,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: lightTheme,
+      darkTheme: darkTheme,
       initialRoute: SplashScreen.routeName,
       routes: {
         SplashScreen.routeName: (_) => const SplashScreen(),
