@@ -5,6 +5,7 @@ import 'package:expense_manager/pages/add_transection.dart';
 import 'package:expense_manager/pages/bottom_nav.dart';
 import 'package:expense_manager/pages/dashboard_page.dart';
 import 'package:expense_manager/pages/profile.dart';
+import 'package:expense_manager/pages/settings_page.dart';
 import 'package:expense_manager/pages/splash_screen.dart';
 import 'package:expense_manager/pages/statistics_screen.dart';
 import 'package:expense_manager/pages/wallet_screen.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         LoginPage.routeName: (_) => const LoginPage(),
         RegistrationScreen.routeName: (_) => const RegistrationScreen(),
         DashboardScreen.routeName: (_) => const DashboardScreen(),
+        SettingsScreen.routeName: (_) => const SettingsScreen(),
         ExBottomAppBar.routeName: (_) => const ExBottomAppBar(),
         StatisticsScreen.routeName: (_) => const StatisticsScreen(),
         // AddExpenseScreen.routeName: (_) => const AddExpenseScreen(),

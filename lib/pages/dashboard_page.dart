@@ -4,6 +4,7 @@ import 'package:expense_manager/auth/login_page.dart';
 import 'package:expense_manager/constants/styles.dart';
 import 'package:expense_manager/db/db_helper.dart';
 import 'package:expense_manager/models/user_model.dart';
+import 'package:expense_manager/pages/settings_page.dart';
 import 'package:expense_manager/providers/user_provider.dart';
 import 'package:feather_icons/feather_icons.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -106,26 +107,28 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               color: Colors.white30),
                           child: GestureDetector(
                             onTap: () {
-                              EasyLoading.show(status: 'Please wait');
-                              AuthService.logout();
-                              Navigator.pushNamedAndRemoveUntil(context,
-                                  LoginPage.routeName, (route) => false);
-                              EasyLoading.dismiss();
+                              Navigator.pushNamed(
+                                  context, SettingsScreen.routeName);
+                              // EasyLoading.show(status: 'Please wait');
+                              // AuthService.logout();
+                              // Navigator.pushNamedAndRemoveUntil(context,
+                              //     LoginPage.routeName, (route) => false);
+                              // EasyLoading.dismiss();
                             },
                             child: const Stack(
                               children: [
                                 Icon(
-                                  Icons.notifications_none,
+                                  Icons.settings_outlined,
                                   color: Colors.white,
                                 ),
-                                Positioned(
-                                    right: 0,
-                                    top: 0,
-                                    child: Icon(
-                                      Icons.circle,
-                                      size: 10,
-                                      color: Color(0xFFFFAB7B),
-                                    ))
+                                // Positioned(
+                                //     right: 0,
+                                //     top: 0,
+                                //     child: Icon(
+                                //       Icons.circle,
+                                //       size: 10,
+                                //       color: Color(0xFFFFAB7B),
+                                //     ))
                               ],
                             ),
                           ),

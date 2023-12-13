@@ -51,7 +51,7 @@ class _AddIncomeScreenState extends State<AddIncomeScreen> {
         children: [
           Expanded(
             child: ListView(
-              padding: EdgeInsets.only(top: 20, bottom: 100),
+              padding: const EdgeInsets.only(top: 20, bottom: 100),
               children: [
                 Text(
                   "SOURCE",
@@ -139,7 +139,7 @@ class _AddIncomeScreenState extends State<AddIncomeScreen> {
                         Icons.add_circle_outlined,
                         color: Colors.grey,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 15,
                       ),
                       Text(
@@ -156,7 +156,6 @@ class _AddIncomeScreenState extends State<AddIncomeScreen> {
               text: 'Save',
               onPressed: () {
                 EasyLoading.show(status: 'Please wait', dismissOnTap: false);
-
                 final incomeModel = IncomeModel(
                   uid: AuthService.user!.uid, //todo user id pathate hobe
                   amount: double.parse(amountController.text),
